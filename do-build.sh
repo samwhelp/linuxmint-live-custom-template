@@ -1127,6 +1127,23 @@ __EOF__
 
 }
 
+function linuxmint_base_package_install () {
+
+	echo "################################################################################"
+	echo "## [Worker] linuxmint_base_package_install"
+	echo "################################################################################"
+
+	echo "==== install linuxmint base packages ===="
+
+	local run_cmd="apt-get install -y --install-recommends
+		linuxmint-keyring
+		base-files
+	"
+
+	echo \${run_cmd}
+	\${run_cmd}
+}
+
 
 ##
 ## ## Module / Systemd
@@ -1726,6 +1743,7 @@ function model_do_fulfill_scripts () {
 
 	core_apt_sources_config_for_linuxmint
 	core_apt_upgrade
+	linuxmint_base_package_install
 
 
 	core_systemd_package_install
