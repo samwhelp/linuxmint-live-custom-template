@@ -1738,12 +1738,9 @@ function model_do_fulfill_scripts () {
 
 
 	core_apt_sources_config
-	core_apt_upgrade
-
-
 	core_apt_sources_config_for_linuxmint
-	core_apt_upgrade
 	linuxmint_base_package_install
+	core_apt_upgrade
 
 
 	core_systemd_package_install
